@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription</title>
+    <style>
+        /* Ajouter du style pour aligner les labels et les inputs horizontalement */
+        form div {
+            margin-bottom: 10px;
+            
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            
+            
+        }
+        #button{
+            display: inline-block;
+            margin-left: 80px;
+            margin-right: 10px;
+        }
+        h1
+        {
+            margin-left: 50px;
+        }
+        .error-message{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="accueil.html" >  Home </a><a href="projet.html">  Projets et tâches </a><a href="employe.html">  Liste employés </a><a href="inscription.html">  inscription </a>
+    <hr>
+    <center><img src="img1.png" alt=""style="width:1000px;height:500px;"></center>
+    <h1>inscription au site</h1>
+    <form action="" method="post">
+        <div>
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" id="nom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}">
+            <span class="error-message">Veuillez entrer un nom valide (lettres uniquement)</span>
+        </div>
+        <div>
+            <label for="prenom">Prénom:</label>
+            <input type="text" name="prenom" id="prenom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}">
+            <span class="error-message">Veuillez entrer un prénom valide (lettres uniquement)</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <span class="error-message">Veuillez entrer une adresse email valide</span>
+        </div>
+        <div>
+            <label for="telephone">Téléphone:</label>
+            <input type="tel" name="telephone" id="telephone" required pattern="\d{8}">
+            <span class="error-message">Veuillez entrer un numéro de téléphone valide (8 chiffres)</span>
+        </div>
+        <div>
+            <label for="date">Date de naissance:</label>
+            <input type="date" name="date" id="date" required>
+            <span class="error-message">Veuillez entrer une date de naissance</span>
+        </div>
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <span class="error-message">Veuillez entrer un mot de passe valide (au moins 8 caractères, incluant au moins un chiffre, une lettre minuscule et une lettre majuscule)</span>
+        </div>
+        <input type="submit" value="S'inscrire">
+    </form>
+    <hr>
+<footer>
+    <p>vous pouver nous contacter pa email :<a href="contact@esprit.tn">contact@esprit.tn</a> </p>
+    <p>adresse : Ghazela ,  Tunis</p>
+</footer>
+</body>
+</html>
