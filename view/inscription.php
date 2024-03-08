@@ -5,6 +5,8 @@
 <body>
 	<h1>Inscription</h1>
     <form method="POST" action="verification.php">
+	<label for="id">ID:</label>
+	<input type="text" id="id" name="id" required><br><br>
     	<label for="first_name">First:</label>
 	<input type="text" id="first_name" name="first_name" required><br><br>
 		<label for="last_name">Last Name:</label>

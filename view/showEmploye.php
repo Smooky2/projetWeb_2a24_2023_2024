@@ -1,11 +1,56 @@
 <?php
-require_once '../model/Employe.php';
-require_once '../controller/employeC.php';
-
-$employe1 = new Employe('Dupont', 'Pierre', 'pwd123', '0601020304', 'pierre.dupont@gmail.com', '1985-05-15');
-
-var_dump($employe1);
-
-
+include '../Controller/EmployeC.php';
 $employeC = new EmployeC();
-$employeC->show($employe1);
+$list = $employeC->listEmploye();
+?>
+<html>
+
+<head></head>
+
+<body>
+
+    <center>
+        <h1>List of employes</h1>
+        <h2>
+            <a href="addEmploye.php">Add Employe</a>
+        </h2>
+    </center>
+    <table border="1" align="center" width="70%">
+        <tr>
+            <th>Id Employe</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <?php
+        foreach ($list as $employe) {
+        ?>
+            <tr>
+                <td><?= $employe['id']; ?></td>
+                <td><?= $employe['lastName']; ?></td>
+                <td><?= $employe['firstName']; ?></td>
+                <td><?= $employe['email']; ?></td>
+                <td><?= $employe['dob']; ?></td>
+                <td align="center">
+                    <form method="POST" action="updateEmploye.php">
+                        <input type="submit" name="update" value="Update">
+                        <input type="hidden" value=<?PHP echo $employe['id']; ?> name="id">
+                    </form>
+                </td>
+                <td>
+                    <a href="deleteEmploye.php id=<?php echo $employe['id']; ?>">Delete</a>
+                </td>
+                <td>
+                    <tr> </tr>
+        </td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
+</body>
+
+</html>

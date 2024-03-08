@@ -2,6 +2,7 @@
 
 class Employe
 {
+    private $id;
     private $lastname;
     private $firstName; 
     private $password;
@@ -9,7 +10,14 @@ class Employe
     private $email;
     private $dOB;
 
-
+    public function getid()
+    {
+        return $this->id;
+    }
+    public function setid($a)
+    {
+        $this->id=$a;
+    }
     public function getlastname()
     {
         return $this->lastname;
